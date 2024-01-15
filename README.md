@@ -27,7 +27,7 @@ The project follows the Clean Architecture pattern, dividing the application int
 - **EntryApp Layer**: GraphQL Azure Function.
 - **Application Layer**: Use cases and business logic.
 - **Infrastructure Layer**: HTML scraping logic and external dependencies.
-- **Domain Layer**: It contains the Entities
+- **Domain Layer**: Entities
 
 ```plaintext
 /ProductScrapper
