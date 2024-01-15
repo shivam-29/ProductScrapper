@@ -1,6 +1,4 @@
 # ProductScrapper
-
-
 ProductScrapper Azure Function with HotChocolate
 ProductScrapper is an Azure Function designed to scrape product attributes from HTML content provided by a given URL. The function is built using Clean Architecture principles and incorporates HotChocolate for handling GraphQL queries. Centralized NuGet package management is implemented for seamless package updates and maintenance.
 
@@ -12,8 +10,15 @@ HotChocolate for GraphQL: GraphQL queries can be submitted to the Azure Function
 Azure Function: The application is built as an Azure Function, making it scalable and serverless.
 
 Centralized NuGet Package Management: NuGet packages are centrally managed to ensure consistency and ease of updates.
+# Project Structure
 
-# Project Folder Structure
+The project follows the Clean Architecture pattern, dividing the application into layers:
+
+- **Presentation Layer**: Azure Function, GraphQL schema, and request/response models.
+- **Application Layer**: Use cases and business logic.
+- **Infrastructure Layer**: HTML scraping logic and external dependencies.
+
+```plaintext
 /ProductScrapper
 |-- src
 |   |-- ProductScrapper.FunctionApp
@@ -34,4 +39,5 @@ Centralized NuGet Package Management: NuGet packages are centrally managed to en
 |
 |-- ProductScrapper.sln
 |-- README.md
+
 
