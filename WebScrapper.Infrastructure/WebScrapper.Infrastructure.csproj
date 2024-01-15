@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" />
+    <PackageReference Include="Selenium.WebDriver" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebScrapper.Application\WebScrapper.Application.csproj" />
+    <ProjectReference Include="..\WebScrapper.Domain\WebScrapper.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ChromeWebDriver\chromedriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
