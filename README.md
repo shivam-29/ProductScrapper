@@ -1,6 +1,6 @@
 # Product Scrapper Azure Function
 
-ProductScrapper is an Azure Function designed to scrape product attributes from HTML content provided by a given URL. The function is built using Clean Architecture principles, incorporates HotChocolate for handling GraphQL queries, and employs centralized NuGet package management for easy maintenance.
+Product Scrapper is an Azure Function designed to scrape product attributes from HTML content provided by a given URL. The function is built using Clean Architecture principles, incorporates HotChocolate for handling GraphQL queries, and employs centralized NuGet package management for easy maintenance.
 
 ## Features
 
