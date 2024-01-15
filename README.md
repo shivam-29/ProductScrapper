@@ -1,22 +1,33 @@
-# ProductScrapper
-ProductScrapper Azure Function with HotChocolate
-ProductScrapper is an Azure Function designed to scrape product attributes from HTML content provided by a given URL. The function is built using Clean Architecture principles and incorporates HotChocolate for handling GraphQL queries. Centralized NuGet package management is implemented for seamless package updates and maintenance.
+# ProductScrapper Azure Function
 
-Features
-Clean Architecture: The project structure follows the principles of Clean Architecture, promoting separation of concerns and maintainability.
+ProductScrapper is an Azure Function designed to scrape product attributes from HTML content provided by a given URL. The function is built using Clean Architecture principles, incorporates HotChocolate for handling GraphQL queries, and employs centralized NuGet package management for easy maintenance.
 
-HotChocolate for GraphQL: GraphQL queries can be submitted to the Azure Function, allowing clients to request specific product attributes from the HTML content.
+## Features
 
-Azure Function: The application is built as an Azure Function, making it scalable and serverless.
+- **Clean Architecture**: Follows the Clean Architecture principles for better maintainability and separation of concerns.
 
-Centralized NuGet Package Management: NuGet packages are centrally managed to ensure consistency and ease of updates.
+- **HotChocolate for GraphQL**: Allows clients to submit GraphQL queries to request specific product attributes from the HTML content.
+
+- **Azure Function**: Built as an Azure Function, making it scalable and serverless.
+
+- **Centralized NuGet Package Management**: NuGet packages are centrally managed for consistency and easy updates.
+
+## Getting Started
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/yourusername/ProductScrapper.git
+   cd ProductScrapper
+
 # Project Structure
 
 The project follows the Clean Architecture pattern, dividing the application into layers:
 
-- **Presentation Layer**: Azure Function, GraphQL schema, and request/response models.
+- **EntryApp Layer**: GraphQLAzure Function.
 - **Application Layer**: Use cases and business logic.
 - **Infrastructure Layer**: HTML scraping logic and external dependencies.
+- **Domain Layer**: It contains the Entities
 
 ```plaintext
 /ProductScrapper
