@@ -1,4 +1,4 @@
-namespace WebScrapper.EntryApp.Features;
+namespace ProductScrapper.EntryApp.Features;
 
 public static class GraphQLFunction
 {

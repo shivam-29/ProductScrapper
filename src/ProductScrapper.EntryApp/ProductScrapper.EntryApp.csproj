@@ -10,7 +10,7 @@
   <ItemGroup Condition="'$(ImplicitUsings)' == 'enable'">
     <Using Include="Microsoft.Azure.Functions.Extensions.DependencyInjection" />
     <Using Include="Microsoft.Extensions.DependencyInjection" />
-    <Using Include="WebScrapper.EntryApp" />
+    <Using Include="ProductScrapper.EntryApp" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WebScrapper.Infrastructure\WebScrapper.Infrastructure.csproj" />
+    <ProjectReference Include="..\ProductScrapper.Infrastructure\ProductScrapper.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
