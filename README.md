@@ -12,3 +12,26 @@ HotChocolate for GraphQL: GraphQL queries can be submitted to the Azure Function
 Azure Function: The application is built as an Azure Function, making it scalable and serverless.
 
 Centralized NuGet Package Management: NuGet packages are centrally managed to ensure consistency and ease of updates.
+
+# Project Folder Structure
+/ProductScrapper
+|-- src
+|   |-- ProductScrapper.FunctionApp
+|   |   |-- ...
+|   |
+|   |-- ProductScrapper.Application
+|   |   |-- ...
+|   |
+|   |-- ProductScrapper.Infrastructure
+|       |-- ...
+|
+|-- tests
+|   |-- ProductScrapper.UnitTests
+|   |   |-- ...
+|   |
+|   |-- ProductScrapper.IntegrationTests
+|       |-- ...
+|
+|-- ProductScrapper.sln
+|-- README.md
+
