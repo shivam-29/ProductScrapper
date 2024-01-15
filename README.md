@@ -32,10 +32,13 @@ The project follows the Clean Architecture pattern, dividing the application int
 ```plaintext
 /ProductScrapper
 |-- src
-|   |-- ProductScrapper.FunctionApp
+|   |-- ProductScrapper.Application
 |   |   |-- ...
 |   |
-|   |-- ProductScrapper.Application
+|   |-- ProductScrapper.Domain
+|   |   |-- ...
+|   |
+|   |-- ProductScrapper.EntryApp
 |   |   |-- ...
 |   |
 |   |-- ProductScrapper.Infrastructure
