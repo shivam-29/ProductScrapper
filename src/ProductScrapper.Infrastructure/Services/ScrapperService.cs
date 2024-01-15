@@ -1,10 +1,4 @@
-﻿using HtmlAgilityPack;
-using System.Net;
-using System.Text.RegularExpressions;
-using WebScrapper.Application.Services.Interfaces;
-using Response = WebScrapper.Application.Models.Response;
-
-namespace WebScrapper.Infrastructure.Services;
+﻿namespace ProductScrapper.Infrastructure.Services;
 public class ScrapperService : IScrapperService
 {
     public async Task<List<Response>> ScrapeUrlAsync(string url)
@@ -129,7 +123,7 @@ public class ScrapperService : IScrapperService
    
     static List<HtmlNode> ExtractUnorderedLists(string html)
     {
-        HtmlDocument htmlDoc = new HtmlDocument();
+        HtmlDocument htmlDoc = new();
         htmlDoc.LoadHtml(html);
 
         // Select all unordered lists (ul)

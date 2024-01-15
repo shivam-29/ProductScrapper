@@ -1,7 +1,6 @@
-using WebScrapper.Infrastructure.Services;
 
-[assembly: FunctionsStartup(typeof(Startup))]
-namespace WebScrapper.EntryApp;
+[assembly: FunctionsStartup(typeof(ProductScrapper.EntryApp.Startup))]
+namespace ProductScrapper.EntryApp;
 
 public class Startup : FunctionsStartup
 {

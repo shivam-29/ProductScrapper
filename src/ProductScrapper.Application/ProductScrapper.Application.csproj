@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\WebScrapper.Domain\WebScrapper.Domain.csproj" />
+    <ProjectReference Include="..\ProductScrapper.Domain\ProductScrapper.Domain.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

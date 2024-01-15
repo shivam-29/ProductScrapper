@@ -1,4 +1,4 @@
-﻿namespace WebScrapper.Application.Models;
+﻿namespace ProductScrapper.Application.Models;
 public class Response
 {
     public string Tag { get; set; } = string.Empty;
