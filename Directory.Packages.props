@@ -1,0 +1,19 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageVersion Include="HotChocolate.AspNetCore.Authorization" Version="13.8.1" />
+    <PackageVersion Include="HtmlAgilityPack" Version="1.11.57" />
+    <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.26" />
+    <PackageVersion Include="Microsoft.IdentityModel.Tokens" Version="7.2.0" />
+    <PackageVersion Include="Microsoft.NET.Sdk.Functions" Version="4.2.0" />
+    <PackageVersion Include="Microsoft.Azure.Functions.Extensions" Version="1.1.0" />
+    <PackageVersion Include="HotChocolate.AzureFunctions" Version="13.8.1" />
+    <PackageVersion Include="HotChocolate.Types.Analyzers" Version="13.8.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageVersion>
+    <PackageVersion Include="Selenium.WebDriver" Version="4.16.2" />
+  </ItemGroup>
+</Project>
