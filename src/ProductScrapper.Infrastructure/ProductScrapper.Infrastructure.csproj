@@ -2,18 +2,11 @@
 
   <ItemGroup>
     <PackageReference Include="HtmlAgilityPack" />
-    <PackageReference Include="Selenium.WebDriver" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ProductScrapper.Application\ProductScrapper.Application.csproj" />
     <ProjectReference Include="..\ProductScrapper.Domain\ProductScrapper.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="ChromeWebDriver\chromedriver.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
   <PropertyGroup>
