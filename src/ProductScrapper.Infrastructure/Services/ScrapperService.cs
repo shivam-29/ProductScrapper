@@ -20,7 +20,8 @@ public class ScrapperService : IScrapperService
             response.EnsureSuccessStatusCode();
             var content = await response.Content.ReadAsStringAsync();
 
-            content = RemoveScripts(content);
+            content = StripScriptsAndStyles(content);
+            content = content.Replace("&lrm;", string.Empty);
 
             HtmlDocument htmlDocument = new();
 
@@ -29,6 +30,8 @@ public class ScrapperService : IScrapperService
             var h1WithTitle = htmlDocument.DocumentNode.SelectSingleNode("//h1[@id='title']");
 
             list.Add(new Response { Tag = h1WithTitle.Name, Value = h1WithTitle.InnerText });
+
+
             var tables = htmlDocument.DocumentNode.SelectNodes("//table");
 
             if (tables != null)
@@ -62,12 +65,11 @@ public class ScrapperService : IScrapperService
                 }
             }
             var unorderedLists = htmlDocument.DocumentNode.SelectNodes("//ul");
-            if(unorderedLists != null)
+            if (unorderedLists != null)
             {
 
                 foreach (var ul in unorderedLists)
                 {
-                    Console.WriteLine("Unordered List:");
 
                     // Select all list items (li) within the unordered list (ul)
                     var listItems = ul.SelectNodes("li");
@@ -103,33 +105,22 @@ public class ScrapperService : IScrapperService
         }
 
     }
-
-    static string RemoveScripts(string inputString)
+    public static string StripScriptsAndStyles(string html)
     {
-        // Use a regular expression to match <script> tags and their content
-        string pattern = @"<script\b[^<]*(?:(?!</script>)<[^<]*)*</script>";
-        string result = Regex.Replace(inputString, pattern, "");
-        // Remove content inside <link> tags
-        string linkPattern = @"<link\b[^<]*(?:(?!</link>)<[^<]*)*</link>";
-        result = Regex.Replace(result, linkPattern, "");
+        // Use HtmlAgilityPack for robust HTML parsing and manipulation
+        HtmlDocument doc = new();
+        doc.LoadHtml(html);
 
-        // Remove content inside <style> tags
-        string stylePattern = @"<style\b[^<]*(?:(?!</style>)<[^<]*)*</style>";
-        result = Regex.Replace(result, stylePattern, "");
+        // Remove script and style nodes directly
+        var nodesToRemove = doc.DocumentNode.SelectNodes("//script|//style");
+        if (nodesToRemove != null)
+        {
+            foreach (HtmlNode node in nodesToRemove)
+            {
+                node.ParentNode.RemoveChild(node);
+            }
+        }
 
-        return result;
-    }
-
-   
-    static List<HtmlNode> ExtractUnorderedLists(string html)
-    {
-        HtmlDocument htmlDoc = new();
-        htmlDoc.LoadHtml(html);
-
-        // Select all unordered lists (ul)
-        var unorderedLists = htmlDoc.DocumentNode.SelectNodes("//ul");
-
-        return unorderedLists != null ? new List<HtmlNode>(unorderedLists) : new List<HtmlNode>();
+        return doc.DocumentNode.OuterHtml;
     }
 }
-
